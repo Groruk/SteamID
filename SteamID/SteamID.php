@@ -80,6 +80,11 @@ class SteamID
         }
     }
 
+    public static function compare($steam1, $steam2)
+    {
+        return strcasecmp(self::toSteam64($steam1), self::toSteam64($steam2)) === 0;
+    }
+
     private static function getCalcMethod()
     {
         switch (true) {
